@@ -5,8 +5,10 @@ AiChatDuel.py
 두 AI 주어진 토픽에 대해 번갈아가며 토론하는 시뮬레이터입니다.
 - Groq API 사용 (환경변수 Groq_API_KEY 필요)
 """
-
+import os
 from groq import Groq
+
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 def judge_ai(topic, history):
     history_text = "\n".join(history)
